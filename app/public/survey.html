@@ -218,6 +218,38 @@
       if (data) {
         console.log("Yes, I am getting a match...");
         console.log(data);
+        //display a modal popup
+        var divModal = $("<div>").addClass("md-show").attr("id","myModal").attr("role", "dialog");
+        var modalDialog = $("<div>").addClass("modal-dialog modal-sm");
+        var modalContent = $("<div>").addClass("modal-content");
+        
+        //create the modal header
+        var modalHeader = $("<div>").addClass("modal-header");
+        var button = $("<button>").addClass("close").attr("data-dismiss","modal");
+        var h4 = $("<h4>").addClass("modal-title").text("Meet Your Matching Friend...");
+        //creat the modal body
+        var modalBody = $("<div>").addClass("modal-body");
+        var p = $("<p>").text(data.name);
+        var img = $("<img>").attr("src", data.photo).attr("alt","your compatible friend's photo").attr("height", "200px").attr("width","200px");
+
+        //create the modal footer
+        var modalFooter = $("<div>").addClass("modal-footer");
+        var button2 = $("<button>").addClass("btn btn-default").attr("data-dismiss","modal").text("Close");
+
+        //create the header, body and footer of the modal  
+        modalHeader.append(button, h4);
+        modalBody.append(p, img);
+        modalFooter.append(button2);
+
+        //put the modal content together
+        modalContent.append(modalHeader, modalBody, modalFooter);
+
+        divModal.append(modalDialog, modalContent);
+
+        //now append to body
+        $("body").prepend(divModal);
+
+
       } else {
         console.log("Bummer, I won't be getting a match...");
       }
@@ -229,3 +261,6 @@
 </script>
 
 </html>
+
+
+

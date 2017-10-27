@@ -21,20 +21,20 @@ module.exports = function(app) {
     //convert the scores into an array
     var scoresArray = req.body.scores.split("");
     
-    //add the new friend into the existing array of friends
-    friends.push(
-    {
-      name : req.body.name,
-      photo : req.body.photo,
-      scores : scoresArray
-    }
-      );
+    // //add the new friend into the existing array of friends
+    // friends.push(
+    // {
+    //   name : req.body.name,
+    //   photo : req.body.photo,
+    //   scores : scoresArray
+    // }
+    //   );
     //res.json({name : "John Snow", photo : "https://i.pinimg.com/564x/80/38/ac/8038aca316ab5150c7a53945ad02153d.jpg"});
-    res.json(findCompatibleFriend(scoresArray));
+    res.json(findCompatibleFriend(req.body.name, req.body.photo, scoresArray));
   });
 };
 
-function findCompatibleFriend(scores) {
+function findCompatibleFriend(name, photo, scores) {
   //initialize a matching friend to the first friend as a place holder
   var compatibleFriend = friends[1].name;
 
@@ -65,6 +65,15 @@ function findCompatibleFriend(scores) {
       photo = element.photo
     }
   });
+
+  //add the new friend into the existing array of friends
+  friends.push(
+    {
+      name : name,
+      photo : photo,
+      scores : scores
+    }
+  );
 
   //return the matching friend and the photo (as an object)
   return {name : compatibleFriend, photo : photo};
