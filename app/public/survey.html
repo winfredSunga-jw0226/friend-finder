@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friend Finder</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Jquery CDN -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+</head>
+<body>
+  <div class="container">
+    <h2>Survey Questions</h1>
+    <hr class="my-4">
+    <h3><strong>About You</strong></h2>
+    <form>
+      <div class="form-group">
+        <label for="name"><h3>Name (Required)</h3></label>
+        <input type="text" class="form-control" id="name" placeholder="John Snow">
+      </div>
+      <div class="form-group">
+        <label for="photo-link"><h3>Link to Photo Image (Required)</h3></label>
+        <input type="password" class="form-control" id="photo-link">
+      </div>
+      <hr class="my-4">
+
+      <label for="q1"><h3><strong>Question 1</strong></h3>
+        <h4>I am the life of the party</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select class = "form-control" id="q1">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q2"><h3><strong>Question 2</strong></h3>
+        <h4>I don't mind being the center of attention</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+         <select class = "form-control" id="q2">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>  
+      </div>    
+
+      <label for="q3"><h3><strong>Question 3</strong></h3>
+        <h4>I often forget to put things back in their proper place</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+         <select class = "form-control" id="q3">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q4"><h3><strong>Question 4</strong></h3>
+        <h4>I have difficulty understanding abstract ideas</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+         <select class = "form-control" id="q4">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>  
+      </div>
+      <label for="q5"><h3><strong>Question 5</strong></h3>
+        <h4>I am not interested in other people's problems</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+         <select class = "form-control" id="q5">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q6"><h3><strong>Question 6</strong></h3>
+        <h4>I make people feel at ease</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select class = "form-control" id="q6">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q7"><h3><strong>Question 7</strong></h3>
+        <h4>I have frequent mood swings</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select class = "form-control" id="q7">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q8"><h3><strong>Question 8</strong></h3>
+        <h4>I have a vivid imagination</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select class = "form-control" id="q8">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q9"><h3><strong>Question 9</strong></h3>
+        <h4>I spend time to reflect on things</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+         <select class = "form-control" id="q9">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <label for="q10"><h3><strong>Question 10</strong></h3>
+        <h4>I follow a schedule</h4>
+      </label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select class = "form-control" id="q10">
+            <option value="" disabled selected>Select your Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>    
+        </div>
+      </div>  
+      <br>
+      <div class="row">
+        <div class="col-sm_12">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </div>
+      </div>
+    </form>
+    <hr class="my-4">
+  </div>
+</body>
+<!-- Below code handles how the data is sent to thre server via a POST Request to the API-->
+<script type="text/javascript">
+
+  //JQuery listener for button click event
+  $(".btn").on("click", function(event) {
+    //prevent page from simply refreshing
+    event.preventDefault();
+
+    var scoresArray = [];
+
+    for (var i = 1; i <= 10; i++) {
+      scoresArray.push($("#q" + i).val());
+    }
+
+    var scoresString = scoresArray.join("");
+
+    console.log(scoresString);
+    
+    //grab the form elements and store as an object
+    var newFriend = {
+      "name" : $("#name").val().trim(),
+      "photo" : $("#photo-link").val().trim(),
+      "scores" : scoresString
+    };  
+
+    console.log(newFriend);
+
+    //make a post request request to the API/server
+    //here we provide the url, the object we want to send to the server, then a callback where we'll catch the response of the server
+    $.post("/api/friends", newFriend, function(data) {
+      if (data) {
+        console.log("Yes, I am getting a match...");
+        console.log(data);
+      } else {
+        console.log("Bummer, I won't be getting a match...");
+      }
+     
+    });
+
+  });
+  
+</script>
+
+</html>
