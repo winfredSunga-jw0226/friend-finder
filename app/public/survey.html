@@ -2,14 +2,35 @@
 <html>
 <head>
   <title>Friend Finder</title>
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- Jquery CDN -->
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </head>
 </head>
 <body>
+
   <div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Meet Your New Friend!</h4>
+          </div>
+          <div class="modal-body">
+            <p id="friend-name">Name of Your Friend</p>
+            <br>
+            <img id="img-friend" src="#" alt="your friend's photo" height="200px" width="200px">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <h2>Survey Questions</h1>
     <hr class="my-4">
     <h3><strong>About You</strong></h2>
@@ -20,7 +41,7 @@
       </div>
       <div class="form-group">
         <label for="photo-link"><h3>Link to Photo Image (Required)</h3></label>
-        <input type="password" class="form-control" id="photo-link">
+        <input type="text" class="form-control" id="photo-link">
       </div>
       <hr class="my-4">
 
@@ -178,9 +199,10 @@
       <br>
       <div class="row">
         <div class="col-sm_12">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+          <!-- Trigger the modal with a button -->
+          <button id="btn-submit" type="button" class="btn btn-info btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Submit</button>
         </div>
-      </div>
+      </div>  
     </form>
     <hr class="my-4">
   </div>
@@ -189,7 +211,7 @@
 <script type="text/javascript">
 
   //JQuery listener for button click event
-  $(".btn").on("click", function(event) {
+  $("#btn-submit").on("click", function(event) {
     //prevent page from simply refreshing
     event.preventDefault();
 
@@ -218,6 +240,15 @@
       if (data) {
         console.log("Yes, I am getting a match...");
         console.log(data);
+
+        console.log(data.name);
+        console.log(data.photo);
+
+        //put the name and photo of your friend into the modal popup's body
+        $("#friend-name").text(data.name);
+        $("#img-friend").attr("src",data.photo);
+
+    /*    
         //display a modal popup
         var divModal = $("<div>").addClass("md-show").attr("id","myModal").attr("role", "dialog");
         var modalDialog = $("<div>").addClass("modal-dialog modal-sm");
@@ -234,7 +265,7 @@
 
         //create the modal footer
         var modalFooter = $("<div>").addClass("modal-footer");
-        var button2 = $("<button>").addClass("btn btn-default").attr("data-dismiss","modal").text("Close");
+        var button2 = $("<button>").addClass("btn btn-default modal-close").attr("data-dismiss","modal").text("Close");
 
         //create the header, body and footer of the modal  
         modalHeader.append(button, h4);
@@ -248,7 +279,7 @@
 
         //now append to body
         $("body").prepend(divModal);
-
+    */
         //clear the form 
         $("#name").val("");
         $("#photo-link").val("");
@@ -265,8 +296,8 @@
       }
 
     });
-  });  
- 
+  });      
+  
 </script>
 
 </html>

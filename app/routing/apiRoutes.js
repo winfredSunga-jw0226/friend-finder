@@ -21,25 +21,18 @@ module.exports = function(app) {
     //convert the scores into an array
     var scoresArray = req.body.scores.split("");
     
-    // //add the new friend into the existing array of friends
-    // friends.push(
-    // {
-    //   name : req.body.name,
-    //   photo : req.body.photo,
-    //   scores : scoresArray
-    // }
-    //   );
-    //res.json({name : "John Snow", photo : "https://i.pinimg.com/564x/80/38/ac/8038aca316ab5150c7a53945ad02153d.jpg"});
+    //send a response back to the client, represented by the return value of the findCompatibleFriend function
     res.json(findCompatibleFriend(req.body.name, req.body.photo, scoresArray));
   });
 };
 
+//function which finds the compatible friend
 function findCompatibleFriend(name, photo, scores) {
   //initialize a matching friend to the first friend as a place holder
-  var compatibleFriend = friends[1].name;
+  var compatibleFriend = "";
 
   //and also use his/her photo link as the initial photo link
-  var photo = friends[1].photo;
+  var photo = "";
 
   //create a variable called lowest total difference, initialize to 100
   var lowestTotalDifference = 100;
@@ -66,14 +59,14 @@ function findCompatibleFriend(name, photo, scores) {
     }
   });
 
-  //add the new friend into the existing array of friends
-  friends.push(
-    {
-      name : name,
-      photo : photo,
-      scores : scores
-    }
-  );
+  // //add the new friend into the existing array of friends
+  // friends.push(
+  //   {
+  //     name : name,
+  //     photo : photo,
+  //     scores : scores
+  //   }
+  // );
 
   //return the matching friend and the photo (as an object)
   return {name : compatibleFriend, photo : photo};
