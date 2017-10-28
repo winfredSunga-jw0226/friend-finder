@@ -42,31 +42,34 @@ function findCompatibleFriend(name, photo, scores) {
     //initialize a local variable called total difference to 0
     var totalDifference = 0;
 
-    //compare the current user's scores against each friend by taking the differences of each score
-    element.scores.forEach(function(element, index) {
-      //the total difference increments per iteration
-      totalDifference += Math.abs(element - scores[index]);
-    });
+    //just to make sure we do not compare a person to him/herself
+    if (name !== element.name) {
+      //compare the current user's scores against each friend by taking the differences of each score
+      element.scores.forEach(function(element, index) {
+        //the total difference increments per iteration
+        totalDifference += Math.abs(element - scores[index]);
+       });
 
-    //if the current total difference < lowest total difference
-    if (totalDifference < lowestTotalDifference) {
-      //set lowest total difference = current total difference
-      lowestTotalDifference = totalDifference;
-      //set the compatible friend = current friend
-      compatibleFriend = element.name;
-      //and set the photo link to his/her photo link
-      photo = element.photo
-    }
+      //if the current total difference < lowest total difference
+      if (totalDifference < lowestTotalDifference) {
+        //set lowest total difference = current total difference
+        lowestTotalDifference = totalDifference;
+        //set the compatible friend = current friend
+        compatibleFriend = element.name;
+        //and set the photo link to his/her photo link
+        photo = element.photo;
+      }
+    } 
   });
 
-  // //add the new friend into the existing array of friends
-  // friends.push(
-  //   {
-  //     name : name,
-  //     photo : photo,
-  //     scores : scores
-  //   }
-  // );
+  //add the new friend into the existing array of friends
+  friends.push(
+    {
+      name : name,
+      photo : photo,
+      scores : scores
+    }
+  );
 
   //return the matching friend and the photo (as an object)
   return {name : compatibleFriend, photo : photo};
