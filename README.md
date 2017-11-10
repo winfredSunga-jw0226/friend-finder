@@ -6,6 +6,10 @@ This app finds one a matching friend based on a compatibility algorithm. A user 
 
 Upon submission, the server runs a logic to compare the user's scores against other user's scores in the database. The user is then introduced to a user that he/she is compatible with - name and picture beging provided.
 
+### Give it a Try
+
+Want to give it a try? If so, go ahead and click on the link --> [Friend Finder](https://morning-forest-68535.herokuapp.com/)
+
 ## **Technical Details**
 
 ### Client-side Tech
